@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebAppMVC.Models.Verhuisdoos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Index">Alle verhuisdozen</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VerhuisdoosId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VerhuisdoosNaam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VerhuisdoosOmschrijving)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VerhuisdoosId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VerhuisdoosNaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VerhuisdoosOmschrijving)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
