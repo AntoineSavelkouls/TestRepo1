@@ -39,7 +39,6 @@ namespace WebAppMVC.Controllers
         // GET: Verhuisdozen/Create
         public ActionResult Create()
         {
-            return View();
         }
 
         // POST: Verhuisdozen/Create
